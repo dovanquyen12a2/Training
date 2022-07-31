@@ -30,7 +30,7 @@ public class R2dbcApplication {
   			_connection.create(),
   			connection ->
     		Flux.from(connection.createStatement(
-     		  "DROP TABLE TESTTABLE ")
+				"CALL APPLUUDONG.APPLICATION_GROUP_GETALL()")
       		.execute())
       		.flatMap(result ->
         	result.map(row -> row.get(0, String.class))),
